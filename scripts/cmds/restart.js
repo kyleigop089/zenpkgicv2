@@ -3,6 +3,7 @@ const fs = require("fs-extra");
 module.exports = {
 	config: {
 		name: "restart",
+    aliases: ["rbt","reboot"],
 		version: "1.0",
 		author: "NTKhang",
 		countDown: 5,

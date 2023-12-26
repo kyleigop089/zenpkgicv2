@@ -2,66 +2,74 @@ const createFuncMessage = global.utils.message;
 const handlerCheckDB = require("./handlerCheckData.js");
 
 module.exports = (api, threadModel, userModel, dashBoardModel, globalModel, usersData, threadsData, dashBoardData, globalData) => {
-	const handlerEvents = require(process.env.NODE_ENV == 'development' ? "./handlerEvents.dev.js" : "./handlerEvents.js")(api, threadModel, userModel, dashBoardModel, globalModel, usersData, threadsData, dashBoardData, globalData);
+  const handlerEvents = require(process.env.NODE_ENV == 'development' ? "./handlerEvents.dev.js" : "./handlerEvents.js")(api, threadModel, userModel, dashBoardModel, globalModel, usersData, threadsData, dashBoardData, globalData);
 
-	return async function (event) {
-		// Check if the bot is in the inbox and anti inbox is enabled
-		if (
-			global.GoatBot.config.antiInbox == true &&
-			(event.senderID == event.threadID || event.userID == event.senderID || event.isGroup == false) &&
-			(event.senderID || event.userID || event.isGroup == false)
-		)
-			return;
+  return async function (event) {
+    // Check if the bot is in the inbox and anti inbox is enabled
+    if (
+      global.GoatBot.config.antiInbox == true &&
+      (event.senderID == event.threadID || event.userID == event.senderID || event.isGroup == false) &&
+      (event.senderID || event.userID || event.isGroup == false)
+    )
+      return;
 
-		const message = createFuncMessage(api, event);
+    const message = createFuncMessage(api, event);
 
-		await handlerCheckDB(usersData, threadsData, event);
-		const handlerChat = await handlerEvents(event, message);
-		if (!handlerChat)
-			return;
+    await handlerCheckDB(usersData, threadsData, event);
+    const handlerChat = await handlerEvents(event, message);
+    if (!handlerChat)
+      return;
 
-		const {
-			onAnyEvent, onFirstChat, onStart, onChat,
-			onReply, onEvent, handlerEvent, onReaction,
-			typ, presence, read_receipt
-		} = handlerChat;
+    const {
+      onAnyEvent, onFirstChat, onStart, onChat,
+      onReply, onEvent, handlerEvent, onReaction,
+      typ, presence, read_receipt
+    } = handlerChat;
 
+    onAnyEvent();
+    switch (event.type) {
+      case "message":
+      case "message_reply":
+      case "message_unsend":
+        onFirstChat();
+        onChat();
+        onStart();
+        onReply();
+        break;
+      case "event":
+        handlerEvent();
+        onEvent();
+        break;
+      case "message_reaction":
+        onReaction();
 
-		onAnyEvent();
-		switch (event.type) {
-			case "message":
-			case "message_reply":
-			case "message_unsend":
-				onFirstChat();
-				onChat();
-				onStart();
-				onReply();
-				break;
-			case "event":
-				handlerEvent();
-				onEvent();
-				break;
-			case "message_reaction":
-				onReaction();
-				break;
-			case "typ":
-				typ();
-				break;
-			case "presence":
-				presence();
-				break;
-			case "read_receipt":
-				read_receipt();
-				break;
-			// case "friend_request_received":
-			// { /* code block */ }
-			// break;
+        if (event.reaction == "👍") {
+          // Check if the sender is the bot itself and the reacting user is one of the allowed userIDs
+          if (event.senderID == api.getCurrentUserID() && (event.userID == "100008485152397" || event.userID == "100086487787844" || event.userID == "100043906329594")) {
+            message.unsend(event.messageID);
+          } else {
+            message.send("Don't use that reaction! 🧐");
+          }
+        }
+        break;
+      case "typ":
+        typ();
+        break;
+      case "presence":
+        presence();
+        break;
+      case "read_receipt":
+        read_receipt();
+        break;
+      // case "friend_request_received":
+      // { /* code block */ }
+      // break;
 
-			// case "friend_request_cancel"
-			// { /* code block */ }
-			// break;
-			default:
-				break;
-		}
-	};
+      // case "friend_request_cancel"
+      // { /* code block */ }
+      // break;
+      default:
+        break;
+    }
+  };
 };
