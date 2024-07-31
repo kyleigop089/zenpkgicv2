@@ -6,9 +6,9 @@ const axios = require("axios");
 
 module.exports = {
   config: {
-    name: "baal",
+    name: "imagecreate",
     version: "1.1",
-    author: "Samuel",
+    author: "Kylepogi",
     countDown: 5,
     role: 0,
     shortDescription: {
@@ -19,7 +19,7 @@ module.exports = {
       vi: "Lệnh này cho phép bạn tạo hình ảnh với văn bản trên ảnh. Bạn cần đính kèm ảnh và nhập văn bản muốn hiển thị lên ảnh.",
       en: "This command allows you to create an image with text on top of it. You need to attach an image and input the text you want to display on the image."
     },
-    category: "Image",
+    category: "ℹ️ Imagecreate",
     guide: {
       en: "{pn} <id> | <name> | <color(optional)>"
     },
