@@ -4,13 +4,13 @@ const axios = require("axios");
 const fs = require("fs-extra");
 
 module.exports.config = {
-	name: "beautifulv2",
+	name: "beautifulmage",
 	version: "1.0.0",
 	hasPermission: 0,
-	credits: "Samuel Kâñèñgeè",
+	credits: "Kylepogi",
 	description: "Generate a beautiful image",
-	category: "EDIT-IMG",
-	usages: "beautifulv2",
+	category: "🖼 EDIT-IMG",
+	usages: "beautiful",
 	cooldowns: 5,
 };
 
