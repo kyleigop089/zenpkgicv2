@@ -7,7 +7,7 @@ module.exports = {
   config: {
     name: "art5",
     version: "1.1",
-    author: "JARiF | Samuel Kâñèñgeè",
+    author: "JARiF | Kylepogi",
     countDown: 5,
     role: 0,
     category: "AI-ART",
@@ -16,7 +16,7 @@ module.exports = {
   onStart: async function ({ event, message, getLang, threadsData, api, args }) {
     try {
       if (args.length >= 2 || (event.type === "message_reply" && event.messageReply.attachments.length > 0 && event.messageReply.attachments[0].type === "photo")) {
-        message.reply("Please wait....");
+        message.reply("🙏🏻 Please wait....");
 
         const imageUrls = getImageUrls(event, args);
 
@@ -45,11 +45,11 @@ module.exports = {
       } else if (event.type === "message_reply") {
         message.reply("Reply with an image.");
       } else {
-        message.reply("Please provide an image link and a prompt, or reply with an image.");
+        message.reply("ℹ️ Please provide an image link and a prompt, or reply with an image.");
 }
     } catch (e) {
       console.error(e);
-      message.reply("❌ | Something went wrong.");
+      message.reply("❌ 𝗔𝗖𝗖𝗘𝗦𝗦 𝗗𝗘𝗡𝗜𝗘𝗗.\n▬▬▬▬▬▬▬▬▬▬▬▬\nℹ️ Something went wrong.");
     }
   },
 };
