@@ -8,7 +8,7 @@ module.exports = {
         name: "couple4",
         aliases: ["couplefour","couplev4"],
         version: "1.0",
-        author: "Samuel Kâñèñgeè",
+        author: "kylepogi",
         countDown: 5,
         role: 0,
         shortDescription: "mention someone",
