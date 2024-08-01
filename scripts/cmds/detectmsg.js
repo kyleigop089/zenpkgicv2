@@ -1,7 +1,7 @@
 const { config } = global.GoatBot;
 
 // Define an array of target messages in lowercase
-const targetMessages = ["lance cochangco", "lance ajiro", "lance", "pastebin.com", "replit.com", "github.com"];
+const targetMessages = ["kylepogi", "Kyle", "kyle", "pastebin.com", "replit.com", "github.com"];
 
 module.exports = {
   config: {
