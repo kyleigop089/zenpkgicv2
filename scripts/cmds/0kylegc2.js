@@ -1,9 +1,9 @@
 module.exports = {
  config: {
- name: "walegc2",
+ name: "kylegc2",
  aliases: ['gc2', 'spgc2', 'supportgc2'],
  version: "1.0",
- author: "walex",
+ author: "kylepogi",
  countDown: 5,
  role: 0,
  shortDescription: {
@@ -30,18 +30,18 @@ module.exports = {
  const participantIDs = threadInfo.participantIDs;
  if (participantIDs.includes(userID)) {
  api.sendMessage(
- "You are already in the support group. If you didn't find it, please check your message requests or spam box.",
+ "✅ You are already in the support group. If you didn't find it, please check your message requests or spam box.",
  threadID
  );
  } else {
  // Add user to the support group
  api.addUserToGroup(userID, supportGroupId, (err) => {
  if (err) {
- console.error("Failed to add user to support group:", err);
- api.sendMessage("I can't add you because your id is not allowed message request or your account is private. please add me then try again...", threadID);
+ console.error("❌ Failed to add user to support group:", err);
+ api.sendMessage("⛔ 𝗔𝗖𝗖𝗘𝗦𝗦 𝗗𝗘𝗡𝗜𝗘𝗗 \n▬▬▬▬▬▬▬▬▬▬▬▬\n💁🏻‍♂️I can't add you because your id is not allowed message request or your account is private. please add me then try again...", threadID);
  } else {
  api.sendMessage(
- "You have been added to the admin support group. If you didn't find the box in your inbox, please check your message requests or spam box.",
+ "✅ 𝗔𝗗𝗗𝗘𝗗 𝗦𝗨𝗖𝗖𝗘𝗦𝗦𝗙𝗨𝗟𝗟𝗬!\n▬▬▬▬▬▬▬▬▬▬▬▬\nℹ️ You have been added to the admin support group. If you didn't find the box in your inbox, please check your message requests or spam box.",
  threadID
  );
  }
