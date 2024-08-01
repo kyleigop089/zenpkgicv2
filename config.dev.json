@@ -146,6 +146,7 @@
     "listenTyping": true,
     "logLevel": "error",
     "selfListen": false,
+    "autout": true, 
     "selfListenEvent": true,
     "autoMarkDelivery": false,
     "autoReconnect": false,
