@@ -8,7 +8,7 @@ const path = require("path");
 
 module.exports = {
   config: {
-    name: "sing",
+    name: "sing2",
     version: "1.0",
     role: 0,
     author: "AceGun",
