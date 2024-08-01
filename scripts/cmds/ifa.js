@@ -4,7 +4,7 @@ let lastQuery = "";
 
 module.exports = {
 	config: {
-		name: "wale",
+		name: "ifa",
     aliases: ["ifa","thuth"],
 		version: "1.0",
 		author: "hazeyy/S/W",
