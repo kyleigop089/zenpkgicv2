@@ -3,8 +3,8 @@ const path = require('path');
 
 module.exports = {
   config: {
-    name: "delete",
-    aliases: ["d"],
+    name: "cleanv2",
+    aliases: ["cl2"],
     version: "1.6",
     author: "Subash",
     countDown: 1,
