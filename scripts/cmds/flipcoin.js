@@ -4,12 +4,12 @@ module.exports = {
 		name: "flipcoin",
 		aliases: ["fc"],
 		version: "1.0",
-		author: "Kylepogi",
+		author: "Samuel Kâñèñgeè",
 		countDown: 5,
 		role: 0,
 		shortDescription: "Flip the coin🪙",
 		longDescription: "Flip the coin🪙",
-		category: "game🪙",
+		category: "game",
 		guide: {
 			en: "{pn}"
 		},
