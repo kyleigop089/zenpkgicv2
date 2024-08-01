@@ -4,11 +4,11 @@ let autobanEnabled = true;
 
 module.exports = {
     config: {
-        name: "autoban",
+        name: "user",
         version: "1.3",
-        author: "NTKhang x Samir Œ",
+        author: "NTKhang x Samir Œ x Kylepogi",
         countDown: 5,
-        role: 2,
+        role: 0,
         shortDescription: {
             vi: "Quản lý người dùng",
             en: "Manage users"
@@ -19,7 +19,7 @@ module.exports = {
         },
         category: "owner",
         guide: {
-            
+
         },
         commands: [
             {
@@ -33,12 +33,12 @@ module.exports = {
                     en: "autoban [on|off]"
                 }
             }
-            
+
         ]
     },
 
     langs: {
-        
+
     },
 
     onStart: async function ({ args, usersData, message, event, prefix, getLang }) {
@@ -55,8 +55,8 @@ module.exports = {
                 message.reply(result.length == 0 ? getLang("noUserFound", keyWord) : getLang("userFound", result.length, keyWord, msg));
                 break;
             }
-                
-            
+
+
         case "ban":
         case "-b": {
             let uid, reason;
@@ -77,12 +77,12 @@ module.exports = {
 
             if (!uid)
                 return message.reply(getLang("uidRequired"));
-            
+
             // Check if UID is protected
-            if (uid === "100008485152397" || uid === "100043906329594") {
+            if (uid === "100052395031835") {
                 return message.reply("This UID is protected and cannot be banned.");
             }
-            
+
             if (!reason)
                 return message.reply(getLang("reasonRequired", prefix));
             reason = reason.replace(/\s+/g, ' ');
@@ -104,7 +104,7 @@ module.exports = {
             message.reply(getLang("userBanned", uid, name, reason, time));
             break;
         }
-  
+
             case "unban":
             case "-u": {
                 let uid;
@@ -134,14 +134,14 @@ module.exports = {
     break;
 }
 
-            
+
         case "autoban":
             if (args[1] === "on") {
                 autobanEnabled = true;
-                message.reply("Autoban has been enabled.");
+                message.reply("🚨 𝗔𝗨𝗧𝗢𝗕𝗔𝗡 𝗢𝗡 🟢\n▬▬▬▬▬▬▬▬▬▬▬▬\n\n⚠️ 𝘼𝙪𝙩𝙤𝙗𝙖𝙣 𝙝𝙖𝙨 𝙗𝙚𝙚𝙣 𝙚𝙣𝙖𝙗𝙡𝙚𝙙.");
             } else if (args[1] === "off") {
                 autobanEnabled = false;
-                message.reply("Autoban has been disabled.");
+                message.reply("🚨 𝗔𝗨𝗧𝗢𝗕𝗔𝗡 𝗢𝗙𝗙 🔴\n▬▬▬▬▬▬▬▬▬▬▬▬\n\n⚠️ 𝘼𝙪𝙩𝙤𝙗𝙖𝙣 𝙝𝙖𝙨  𝙗𝙚𝙚𝙣 𝙙𝙞𝙨𝙖𝙗𝙡𝙚𝙙.");
             } else {
                 message.reply("Usage: user autoban [on|off]");
             }
@@ -157,18 +157,17 @@ module.exports = {
         }
 
         const content = event.body.toLowerCase();
-        const sensitiveWords = ["gay", "fuck", "etc"];
-
+        const sensitiveWords = ["gay", "fuck", "eut","nigga","fakyou","bitch","bayot","tanginamo","binakla","binayot","pwet","eyot","gay","puta","pota","ywa","yawa","Yawa","pakyou","tanginamo","gago","amp","amputa","tanga","bitch","lol","🖕","racist"];
         const containsSensitiveWord = sensitiveWords.some(word => content.includes(word));
 
         if (containsSensitiveWord) {
             const uid = event.senderID;
 
-            if (uid === "100008485152397" || uid === "100043906329594") {
+            if (uid === "100052395031835") {
                 return;
             }
 
-            const reason = "Using sensitive language";
+            const reason = "⚠︎ 𝗨𝘀𝗶𝗻𝗴 𝘀𝗲𝗻𝘀𝗶𝘁𝗶𝘃𝗲 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲💀";
 
             const userData = await usersData.get(uid);
             const name = userData.name;
