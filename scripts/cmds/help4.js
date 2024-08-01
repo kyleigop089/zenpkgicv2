@@ -3,8 +3,8 @@ const moment = require('moment-timezone');
 
 module.exports = {
   config: {
-    name: "help4",
-		aliases: ["h4","tulong"],
+    name: "help3",
+		aliases: ["h3","tulong"],
     version: "1.0",
     author: "Jun",
     countDown: 5,
@@ -19,7 +19,7 @@ module.exports = {
     const urls = JSON.parse(fs.readFileSync('walex.json'));
     const link = urls[Math.floor(Math.random() * urls.length)];
 
-    const now = moment().tz('Africa/Lagos');
+    const now = moment().tz('Asia/Manila');
     const date = now.format('MMMM Do YYYY');
     const time = now.format('h:mm:ss A');
 
@@ -36,7 +36,7 @@ module.exports = {
     }
 
     message.reply({ 
-      body: `${messageText}\ndate: ${date}\ntime: ${time}\nbot runs for: ${uptimeString}\n\ncontact admin if you need any help: 󱢏 𝚑𝚝𝚝𝚙𝚜://𝚠𝚠𝚠.𝚏𝚋.𝚌𝚘𝚖/𝚝𝚑𝚊𝚗𝚔𝚜.𝚏𝚘𝚛.𝚌𝚘𝚙𝚢𝚒𝚗𝚐 󱢏`,
+      body: `${messageText}\ndate: ${date}\ntime: ${time}\nbot runs for: ${uptimeString}\n\ncontact admin if you need any help: https://www.facebook.com/kyledev03`,
       attachment: await global.utils.getStreamFromURL(link)
     });
   }
