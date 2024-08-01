@@ -1,3 +1,4 @@
+
 {
   "facebookAccount": {
     "email": "",
@@ -17,28 +18,21 @@
     "ignoreCommand": []
   },
   "GOD": [
-    "100008485152397",
-    "100043906329594",
-    "100086487787844"
+    "100052395031835"
   ],
   "vipUser": [
-    "100008485152397",
-    "100086487787844",
-    "100043906329594"
+    "100052395031835"
   ],
   "adminBot": [
-    "100008485152397",
-    "100008578069233",
-    "100063140622969",
-    "108598507253502"
+    "100052395031835"
   ],
   "whiteListMode": {
     "enable": false,
     "whiteListIds": [],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "W.Xẞot󱢏",
-  "prefix": ".",
+	"prefix": "×",
+	"nickname": "》 × 《 ❃ ➠ 𝙕𝙀𝙋𝙃_𝘽𝙊𝙏𝙑2 ᴷʸˡᵉ'ˢ ᴮᵒᵗ",
   "database": {
     "type": "sqlite",
     "uriMongodb": "",
@@ -46,10 +40,10 @@
     "autoRefreshThreadInfoFirstTime": true,
     "notes": "(1) type selects 'json' or 'sqlite' or 'mongodb'. If you choose mongodb, enter uri connect mongodb in the uriMongodb section, instructions to get uri connect mongodb at: https://youtu.be/z1f9urHW5xY. I recommend using 'mongodb' or 'sqlite', json is not recommended because it is not stable. (2) when you set autoSyncWhenStart to true, the bot will automatically synchronize the data in the database when starting the bot, this will make the bot start slower. (3) when you set autoRefreshThreadInfoFirstTime to true, the bot will automatically refresh the thread information when get first message from the thread since starting the bot"
   },
-  "timeZone": "Africa/Lagos",
+  "timeZone": "Asia/Manila",
   "credentials": {
     "gmailAccount": {
-      "email": "sammyremake@gmail.com",
+      "email": "kivlynx42@gmail.com",
       "clientId": "915938403469-j83aqd3fb783cobb6civ1q6vqh3r1l83.apps.googleusercontent.com",
       "clientSecret": "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",
       "refreshToken": "1//047fdG3yVTszuCgYIARAAGAQSNgF-L9IrXOOQhf0xa6x3hT-Xsq6lRH7d3tO-ZaRuLGYiLq1LwCMshwPMMSDnmTGzOznt8iEG1A",
@@ -66,7 +60,7 @@
     "port": 3001
   },
   "serverUptime": {
-    "enable": false,
+    "enable": true,
     "port": 3001,
     "socket": {
       "enable": true,
@@ -79,7 +73,7 @@
     "notes": "you can set time is interval with milisecond or cron time, example: 1000, 10000, 60000, 3600000, 86400000, 0 0 * * *,... docs: https://www.npmjs.com/package/node-cron. If you set time is 0 or false or null, the bot will not auto restart"
   },
   "autoUptime": {
-    "enable": false,
+    "enable": true,
     "timeInterval": 180,
     "url": "",
     "notes": "the value of timeInterval is seconds, url is the url you want to send the request to (automatically detected for hosting glitch or replit)"
@@ -131,6 +125,10 @@
   "logEvents": {
     "disableAll": false,
     "message": true,
+    "RankupMode": "canvas",
+	"WelcomeMode": "canvas",
+	"LeaveMode": "canvas",
+	"BanTemplate": "",
     "message_reaction": true,
     "message_unsend": true,
     "message_reply": true,
@@ -138,7 +136,7 @@
     "read_receipt": false,
     "typ": false,
     "presence": false
-  },
+},
   "optionsFca": {
     "forceLogin": true,
     "listenEvents": true,
@@ -146,8 +144,9 @@
     "listenTyping": true,
     "logLevel": "error",
     "selfListen": false,
-    "autout": true, 
     "selfListenEvent": true,
+    "autoreact": true, 
+    " autoout": true, 
     "autoMarkDelivery": false,
     "autoReconnect": false,
     "notes": "Document here: https://github.com/ntkhang03/fb-chat-api/blob/master/DOCS.md#apisetoptionsoptions "
