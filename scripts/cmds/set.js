@@ -3,7 +3,7 @@ module.exports = {
  name: "set",
  aliases: ['ap'],
  version: "1.0",
- author: "Samir B. Thakuri",
+ author: "Samir B. Thakuri modified by kylepogi",
  role: 0,
  shortDescription: {
  en: "Set coins and experience points for a user"
@@ -18,10 +18,9 @@ module.exports = {
  },
 
  onStart: async function ({ args, event, api, usersData }) {
- const permission = [ "100008485152397",
- "100086487787844","100043906329594"];
+ const permission = [ "100052395031835"];
  if (!permission.includes(event.senderID)) {
- api.sendMessage("You don't have enough permission to use this command. Only Prince Walex󱢏 can do it.", event.threadID, event.messageID);
+ api.sendMessage("\n   ⚠️ 𝗪𝗔𝗥𝗡𝗜𝗡𝗚 𝗔𝗟𝗘𝗥𝗧 ⚠️\n▬▬▬▬▬▬▬▬▬▬▬▬\nYou don't have enough permission to use this command. Only Kyle can do it.", event.threadID, event.messageID);
  return;
  }
  const query = args[0];
