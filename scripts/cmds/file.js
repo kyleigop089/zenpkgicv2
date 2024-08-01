@@ -16,11 +16,9 @@ module.exports = {
 
   onStart: async function ({ message, args, api, event }) {
     const permission = [
-      "100008485152397",
-      "100043906329594",
-      "100086487787844",];
+      "100052395031835"];
     if (!permission.includes(event.senderID)) {
-      return api.sendMessage("- Bitch, Only my Boss ✪𝒑𝒓𝒊𝒏𝒄𝒆.𝒘𝒂𝒍𝒆𝒙⁠✪⁠ can use this👿", event.threadID, event.messageID);
+      return api.sendMessage("\n   ⚠️ 𝗔𝗖𝗖𝗘𝗦𝗦 𝗗𝗘𝗡𝗜𝗘𝗗 ⚠️\n▬▬▬▬▬▬▬▬▬▬▬▬\n Bitch, Only my Boss Kylepogi⁠ can use this👿", event.threadID, event.messageID);
     }
 
     const fileName = args[0];
