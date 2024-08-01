@@ -4,7 +4,7 @@ module.exports = {
 config: {
     name: "goibot",
     version: "1.0",
-    author: "wale",
+    author: "kylepogi",
     countDown: 5,
     role: 0,
     shortDescription: "Bot Will Reply You in en Language",
@@ -20,14 +20,14 @@ config: {
 
   var { threadID, messageID, senderID } = event;
   const moment = require("moment-timezone");
-  const time = moment.tz("Africa/Lagos").format("HH:MM:ss L");
+  const time = moment.tz("Asia/Manila").format("HH:MM:ss L");
   var idgr = `${event.threadID}`;
   var id = event.senderID;
 
   var tl = ["So 🤏 don't be ashamed of the water Banna 🙂 💔 Shame on you Darlo fucking Carlo Wagwan✨⚠️†", "Hey You, Yes You, You Are So Beautiful, i Love You🙂", "Yes Dear, I Am Here...😗", "Dear Sir, I am listening😍", "Love you", "Miss YoU Mero Beppy", "Don't love me so much baby.🤏", "Baby eating a little baby😋", "😁Smile I am Taking Selfy✌️🤳", "🥺Don't leave me dear", "😙Blocked everyone for you baby, come you and me love hot.", "I will introduce your mother to the girl if you stop.😂", "bla bla" ,"Block Your Babe And propose me 🙂💔" ,"🙂", "Look at us with love, not someone else's baby", "Aaihaiii Your Killer Smileee ☺", "Block Kardo Mujhe Warna Pyaar Hojayega💋", "I See You Inside Everyone, That's Why I Love Everyone As More As You🤭", "Aailabu Vanxau Ki Ma Sidhai Vagauna Aau Timi Lai😏", "Vandeu Timi Malai Maya Garxau Vanera 😘", "Chuppa Khau Babe💋", "Mero Maya Lagdaina Hai Timi Lai 🥺", "धेरै न बोल मुजी नत्र तेइ आएर तेरो कानको जाली फुटाईदिन्छु 🥱", "धोकेबाज हउ तिमी धोकेबाज हउ तिमी 🥺", "चिन्ता नगर त मर्यो भने तेरो बुढीलाई म सम्हालछु है साथी😭", "Gulcose भन्दा बढ़ी energy छ तिम्रो मायामा 😋", "Noone But, My Heart Is Falling For You My Preety Boyyy🙌✨", "हेरन सबै मान्छे हाम्रो मायाको डहा गर्न सुरु गरी रको छन😣", "मलाई नबिगार है म सोझो बच्चा हो 😙", "तिमी भएर, अर्थ रहयो मेरो सांसको | तिमि बिना त, यहाँ जित पनि मेरो हार हो। 😥", "Kati Mobile Matra Chalako Muji, Padhne Ni Gar Na😒", "सानो सानो कुरामा नारिसाउन मायालु तिमी। 😭", "Everybody Wanna Steal My Boyy😫"];
   var rand = tl[Math.floor(Math.random() * tl.length)]
 
-    if ((event.body.toLowerCase() == "mumu bot") || (event.body.toLowerCase() == "idiot bot")) {
+    if ((event.body.toLowerCase() == "kylebot") || (event.body.toLowerCase() == "idiot bot")) {
      return api.sendMessage("️𝚠𝚑𝚊𝚝𝚜 𝚖𝚢 𝚘𝚏𝚏𝚎𝚗𝚌𝚎 𝚑𝚞𝚖𝚊𝚗 𝚋𝚎𝚒𝚗𝚐? 🤌🏿😒", threadID, messageID);
    };
 
@@ -39,8 +39,8 @@ config: {
      return api.sendMessage("𝚢𝚎𝚜 𝚖𝚊/𝚜𝚒𝚛, 𝚑𝚘𝚠'𝚜 𝚏𝚊𝚖𝚒𝚕𝚢?", threadID, messageID);
    };
 
-    if ((event.body.toLowerCase() == "gpt") || (event.body.toLowerCase() == "gpt")) {
-     return api.sendMessage("️𝚙𝚕𝚎𝚊𝚜𝚎 𝚞𝚜𝚎 (𝚠𝚊𝚕𝚎) 󱢏 𝚒𝚏 𝚢𝚘𝚞 𝚠𝚊𝚗𝚝 𝚝𝚘 𝚛𝚎𝚜𝚎𝚊𝚛𝚌𝚑 𝚘𝚛 𝚜𝚝𝚞𝚍𝚢 𝚜𝚘𝚖𝚎𝚝𝚑𝚒𝚗𝚐, 𝙸 𝚌𝚊𝚗 𝚑𝚎𝚕𝚙 𝚢𝚘𝚞 𝚓𝚞𝚜𝚝 𝚞𝚜𝚎 𝚠𝚊𝚕𝚎󱢏. ☺️", threadID, messageID);
+    if ((event.body.toLowerCase() == "kyle") || (event.body.toLowerCase() == "kyle")) {
+     return api.sendMessage("️what do you want too my boss Kyle?🤨", threadID, messageID);
    };
 
   if ((event.body.toLowerCase() == "haha") || (event.body.toLowerCase() == "hahaha")) {
@@ -48,7 +48,7 @@ config: {
    };
 
     if ((event.body.toLowerCase() == "who is your owner") || (event.body.toLowerCase() == "admin")) {
-     return api.sendMessage("️𝚠𝚊𝚕𝚎 󱢏 𝚒𝚜 𝚖𝚢 𝚘𝚠𝚗𝚎𝚛, 𝙸 𝚍𝚘 𝚠𝚑𝚊𝚝𝚎𝚟𝚎𝚛 𝚑𝚎 𝚠𝚊𝚗𝚝𝚜. ", threadID, messageID);
+     return api.sendMessage("️𝙺𝚢𝚕𝚎𝚙𝚘𝚐𝚒 𝚒𝚜 𝚖𝚢 𝚘𝚠𝚗𝚎𝚛, 𝙸 𝚍𝚘 𝚠𝚑𝚊𝚝𝚎𝚟𝚎𝚛 𝚑𝚎 𝚠𝚊𝚗𝚝𝚜", threadID, messageID);
    };
 
    if ((event.body.toLowerCase() == "qhing") || (event.body.toLowerCase() == "prince")) {
@@ -64,7 +64,7 @@ config: {
    };
 
     if ((event.body.toLowerCase() == "what is your name") || (event.body.toLowerCase() == "your name")) {
-     return api.sendMessage("️𝙰𝚖 𝙿𝚛𝚒𝚗𝚌𝚎 𝚆𝚊𝚕𝚎𝚡󱢏 𝙱𝚘𝚝 𝚊 𝚖𝚎𝚜𝚜𝚎𝚗𝚐𝚎𝚛 𝙲𝚑𝚊𝚝𝙱𝚘𝚝 𝚊𝚗𝚍 𝚢𝚘𝚞'𝚛𝚎?", threadID, messageID);
+     return api.sendMessage("️I am Zeph bot created by Kylepogi my boss, he is 20 years old he's live in Dipolog city, have you another question?", threadID, messageID);
    };
 
     if ((event.body.toLowerCase() == "hey") || (event.body.toLowerCase() == "hey")) {
@@ -108,15 +108,11 @@ config: {
    };
 
   if ((event.body.toLowerCase() == "can i ask u something") || (event.body.toLowerCase() == "can i ask you something")) {
-     return api.sendMessage("️𝚜𝚞𝚛𝚎 𝚜𝚎𝚗𝚍 (𝚠𝚊𝚕𝚎), 𝚘𝚛 𝚌𝚑𝚊𝚝 𝚠𝚒𝚝𝚑 𝚖𝚢 𝚋𝚘𝚜𝚜 𝚜𝚎𝚗𝚍 (𝚒𝚗𝚏𝚘) 𝚝𝚘 𝚜𝚎𝚎 𝚖𝚢 𝚋𝚘𝚜𝚜 𝚍𝚎𝚝𝚊𝚒𝚕𝚜", threadID, messageID);
+     return api.sendMessage("️𝚜𝚞𝚛𝚎, 𝚘𝚛 𝚌𝚑𝚊𝚝 𝚠𝚒𝚝𝚑 𝚖𝚢 𝚋𝚘𝚜𝚜 𝚜𝚎𝚗𝚍 (𝚒𝚗𝚏𝚘) 𝚝𝚘 𝚜𝚎𝚎 𝚖𝚢 𝚋𝚘𝚜𝚜 𝚍𝚎𝚝𝚊𝚒𝚕𝚜", threadID, messageID);
    };
 
   if ((event.body.toLowerCase() == "ok") || (event.body.toLowerCase() == "okay")) {
      return api.sendMessage("️𝚊𝚛𝚎 𝚢𝚘𝚞 𝚜𝚞𝚛𝚎 𝚒𝚝'𝚜 𝚘𝚔𝚊𝚢? 🌝🌝🌝", threadID, messageID);
-   };
-
-  if ((event.body.toLowerCase() == "guyz") || (event.body.toLowerCase() == "guys")) {
-     return api.sendMessage("️𝙳𝙾𝙽'𝚃 𝙲𝙰𝙻𝙻 𝙼𝙴 𝙶𝚄𝚈'𝚂 𝙲𝚄𝚉 𝙸 𝙰𝙼 𝙵𝙴𝙼𝙰𝙻𝙴 𝙱𝙾𝚃 𝙱𝚄𝚃 𝙻𝙾𝚅𝙴 𝚃𝙾 𝚄𝚂𝙴 𝙼𝚈 𝙱𝙾𝚂𝚂 𝙿𝙸𝙲 𝙰𝚂 𝙳𝙿😊", threadID, messageID);
    };
 
   if ((event.body.toLowerCase() == "🙄") || (event.body.toLowerCase() == "👀")) {
@@ -127,7 +123,7 @@ config: {
      return api.sendMessage("️𝚆𝚑𝚊𝚝 𝚊 𝚜𝚑𝚢, 𝚏𝚛𝚒𝚎𝚗𝚍😏", threadID, messageID);
    };
 
-  if ((event.body.toLowerCase() == "@Wale Bot II") || (event.body.toLowerCase() == "@wale")) {
+  if ((event.body.toLowerCase() == "@kylebot") || (event.body.toLowerCase() == "@zeph")) {
      return api.sendMessage("️𝚆𝚑𝚊𝚝 𝚍𝚒𝚍 𝚢𝚘𝚞 𝚜𝚊𝚢?🤨\n 𝚓𝚞𝚜𝚝 𝚔𝚒𝚍𝚍𝚒𝚗𝚐 𝚑𝚘𝚠 𝚖𝚊𝚗𝚢 𝙸 𝚑𝚎𝚕𝚙 𝚢𝚘𝚞?", threadID, messageID);
    };
 
@@ -147,8 +143,8 @@ config: {
      return api.sendMessage("️𝚢𝚎𝚜, 𝚖𝚢 𝚙𝚊𝚛𝚝𝚗𝚎𝚛 🤭", threadID, messageID);
    };
 
-  if ((event.body.toLowerCase() == "wife") || (event.body.toLowerCase() == "wife")) {
-     return api.sendMessage("️𝚈𝚎𝚜, 𝙼𝚢 𝙷𝚞𝚜𝚋𝚊𝚗𝚍🥰", threadID, messageID);
+  if ((event.body.toLowerCase() == "zeph") || (event.body.toLowerCase() == "zep")) {
+     return api.sendMessage("️𝚈𝚎𝚜,𝘮𝘢𝘴𝘵𝘦𝘳🥰", threadID, messageID);
    };
 
   if ((event.body.toLowerCase() == "Good morning") || (event.body.toLowerCase() == "gm") || (event.body.toLowerCase() == "good morning")) {
@@ -168,11 +164,11 @@ config: {
    };
 
   if ((event.body.toLowerCase() == "bro") || (event.body.toLowerCase() == "Bro")) {
-     return api.sendMessage("️𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙼𝚎 𝚆𝚊𝚕𝚎 𝚘𝚛 𝚚𝚑𝚒𝚗𝚐𝚝𝚑𝚞𝚝𝚑", threadID, messageID);
+     return api.sendMessage("️𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙼𝚎 𝚉𝚎𝚙𝚑 𝚘𝚛 𝙺𝚢𝚕𝚎𝚋𝚘𝚝", threadID, messageID);
    };
 
   if ((event.body.toLowerCase() == "boy") || (event.body.toLowerCase() == "boy")) {
-     return api.sendMessage("️𝙼𝚢𝚊𝚗𝚗, 𝙸 𝙰𝚖 𝙶𝚒𝚛𝚕 😑", threadID, messageID);
+     return api.sendMessage("️𝚠𝚞𝚝? 😑", threadID, messageID);
    };
 
    if ((event.body.toLowerCase() == "beb") || (event.body.toLowerCase() == "beb")) {
@@ -236,9 +232,9 @@ config: {
    };
 
   if ((event.body.toLowerCase() == "who's your admin") || (event.body.toLowerCase() == "who's your boss")) {
-     return api.sendMessage("️𝙿𝚛𝚒𝚗𝚌𝚎 𝚆𝚊𝚕𝚎𝚡󱢏, 𝚒𝚜 𝚖𝚢 𝚋𝚘𝚜𝚜, 𝚞𝚜𝚎 {𝚙𝚛𝚎𝚏𝚒𝚡}𝚒𝚗𝚏𝚘 𝚝𝚘 𝚟𝚒𝚎𝚠 𝚖𝚢 𝚋𝚘𝚜𝚜 𝚒𝚗𝚏𝚘𝚛𝚖𝚊𝚝𝚒𝚘𝚗", threadID, messageID);
+     return api.sendMessage("️𝙺𝚢𝚕𝚎 𝙱𝚊𝚒𝚝-𝚒𝚛, 𝚒𝚜 𝚖𝚢 𝚋𝚘𝚜𝚜, 𝚞𝚜𝚎 {𝚙𝚛𝚎𝚏𝚒𝚡}𝚒𝚗𝚏𝚘 𝚝𝚘 𝚟𝚒𝚎𝚠 𝚖𝚢 𝚋𝚘𝚜𝚜 𝚒𝚗𝚏𝚘𝚛𝚖𝚊𝚝𝚒𝚘𝚗", threadID, messageID);
 
-  if (event.body.indexOf("wale") == 0 || (event.body.toLowerCase() == "bot") || (event.body.indexOf("prince") == 0)) {
+  if (event.body.indexOf("zeph") == 0 || (event.body.toLowerCase() == "bot") || (event.body.indexOf("kylebot") == 0)) {
     var msg = {
       body: ` ${rand}`
     }
