@@ -39,19 +39,19 @@ module.exports = {
   const depositAmount = parseInt(args[2]); // Get the amount
 
   if (!depositPassword || !depositAmount) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• please provide both\n password and valid\n amount to deposit.|🔑\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n💁🏻‍♂️ please provide both\n password and valid\n amount to deposit.[🔑]\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   if (bankData[user].password !== depositPassword) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• Incorrect password\n Please try again.|🔑\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n⛔ Incorrect password\n Please try again.[🔑]\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   if (isNaN(depositAmount) || depositAmount <= 0) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• Please enter a valid\n deposit amount.|💸\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\nℹ️Please enter a valid\n deposit amount.[💸]\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   if (userMoney < depositAmount) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• You don't have the\n required amount|❌\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n⛔ You don't have the\n required amount [❌]\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   bankData[user].bank += depositAmount;
@@ -60,7 +60,7 @@ module.exports = {
   });
   fs.writeFileSync("./bank.json", JSON.stringify(bankData));
 
-  return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•Successfully deposited ${depositAmount}$ into your bank account.\n\n╚────⊢✭⊣────╝`);
+  return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n✅ Successfully deposited ${depositAmount}$ into your bank account.\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
 
 
       case "withdraw":
@@ -68,21 +68,21 @@ module.exports = {
   const withdrawAmount = parseInt(args[2]); 
 
   if (!withdrawPassword || !withdrawAmount) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•Please provide both a password and a valid amount for withdrawal.🔑\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n💁🏻‍♂️ Please provide both a password and a valid amount for withdrawal.[🔑]\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   if (bankData[user].password !== withdrawPassword) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n✧Incorrect password. Please try again.🔑\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n⛔Incorrect password. Please try again.[🔑]\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   const balance = bankData[user].bank || 0;
 
   if (isNaN(withdrawAmount) || withdrawAmount <= 0) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• ❌|Please enter a valid withdrawal amount.💸\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\nℹ️Please enter a valid withdrawal amount.[💸]\n\n╚────⊢✭⊣────╝");
   }
 
   if (withdrawAmount > balance) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• The requested amount is greater than the available balance in your bank account.👽\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n💁🏻‍♂️ The requested amount is greater than the available balance in your bank account.\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   bankData[user].bank = balance - withdrawAmount;
@@ -91,13 +91,13 @@ module.exports = {
   });
   fs.writeFileSync("./bank.json", JSON.stringify(bankData));
 
-  return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•Successfully withdrew ${withdrawAmount}$ from your bank account.\n\n╚────⊢✭⊣────╝`);
+  return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n•Successfully withdrew ${withdrawAmount}$ from your bank account.\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
 
         case "invest":
   const investmentAmount = parseInt(args[1]);
 
   if (isNaN(investmentAmount) || investmentAmount <= 0) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•Please enter a valid investment amount.💸\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n•Please enter a valid investment amount.💸\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   const riskOutcome = Math.random() < 0.7; 
@@ -106,11 +106,11 @@ module.exports = {
   if (riskOutcome) {
     bankData[user].bank -= investmentAmount;
     fs.writeFileSync("./bank.json", JSON.stringify(bankData));
-    return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•Your high-risk investment of ${investmentAmount}$ was risky, and you lost your money. 😔\n\n╚────⊢✭⊣────╝`);
+    return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n•Your high-risk investment of ${investmentAmount}$ was risky, and you lost your money. 😔\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
   } else {
     bankData[user].bank += potentialReturns;
     fs.writeFileSync("./bank.json", JSON.stringify(bankData));
-    return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•Congratulations! Your high-risk investment of ${investmentAmount}$ paid off, and you earned ${potentialReturns}$ in returns! 🎉\n\n╚────⊢✭⊣────╝`);
+    return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n•Congratulations! Your high-risk investment of ${investmentAmount}$ paid off, and you earned ${potentialReturns}$ in returns! 🎉\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
   }
 
 
@@ -118,11 +118,11 @@ module.exports = {
   const betAmount = parseInt(args[1]);
 
   if (isNaN(betAmount) || betAmount <= 0) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•Please enter a valid amount to bet.💸\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n•Please enter a valid amount to bet.💸\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   if (userMoney < betAmount) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• ❌|You don't have enough money to place that bet.🙅‍♂️\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• ❌|You don't have enough money to place that bet.🙅‍♂️\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   const winChance = 0.4;
@@ -135,14 +135,14 @@ module.exports = {
       money: userMoney - betAmount + winnings
     });
     fs.writeFileSync("./bank.json", JSON.stringify(bankData));
-    return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n✧Congratulations! You've won ${winnings}$! 🎉\n\n╚────⊢✭⊣────╝`);
+    return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n✧Congratulations! You've won ${winnings}$! 🎉\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
   } else {
     bankData[user].bank -= betAmount;
     await usersData.set(event.senderID, {
       money: userMoney - betAmount
     });
     fs.writeFileSync("./bank.json", JSON.stringify(bankData));
-    return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•Oh no! You've lost ${betAmount}$ in the gamble. 😢\n\n╚────⊢✭⊣────╝`);
+    return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n•Oh no! You've lost ${betAmount}$ in the gamble. 😢\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
   }
         case "heist":
   const heistSuccessChance = 0.2; 
@@ -155,16 +155,16 @@ module.exports = {
     const winnings = heistWinAmount;
     bankData[user].bank += winnings;
     fs.writeFileSync("./bank.json", JSON.stringify(bankData));
-    return message.reply(`╔────⊢✭⊣────╗\n\n🏦  •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦]\n\n•Bank heist successful! You've won ${winnings}$! 💰\n\n╚────⊢✭⊣────╝`);
+    return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦  •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n•Bank heist successful! You've won ${winnings}$! 💰\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
   } else {
     const lossAmount = heistLossAmount;
     bankData[user].bank -= lossAmount;
     fs.writeFileSync("./bank.json", JSON.stringify(bankData));
-    return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•Bank heist failed! You've lost ${lossAmount}$! 😔\n\n╚────⊢✭⊣────╝`);
+    return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n•Bank heist failed! You've lost ${lossAmount}$! 😔\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
   }
       case "balance":
         const bankBalance = bankData[user].bank !== undefined && !isNaN(bankData[user].bank) ? bankData[user].bank : 0;
-        return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•Your bank balance is: ${bankBalance}$ •\n•To withdraw money.\n• type:\n•${p}Bank Withdraw 'your withdrawal amount'•\n•To earn interest\n•type:\n•${p}Bank Interest•\n\n╚────⊢✭⊣────╝`);
+        return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n•Your bank balance is: ${bankBalance}$ •\n•To withdraw money.\n• type:\n•${p}Bank Withdraw 'your withdrawal amount'•\n•To earn interest\n•type:\n•${p}Bank Interest•\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
 
       case "interest":
         const interestRate = 0.001; 
@@ -173,7 +173,7 @@ module.exports = {
         const timeDiffInSeconds = (currentTime - lastInterestClaimed) / 1000;
         const interestEarned = bankData[user].bank * (interestRate / 970) * timeDiffInSeconds;
         if (bankData[user].bank <= 0) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•You don't have any money in your bank account to earn interest.💸🤠\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n•You don't have any money in your bank account to earn interest.💸😁\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
         }
 
         bankData[user].lastInterestClaimed = currentTime;
@@ -181,19 +181,19 @@ module.exports = {
 
         fs.writeFileSync("./bank.json", JSON.stringify(bankData));
 
-        return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•You have earned interest of ${interestEarned.toFixed(2)} $ . It has been successfully added to your account balance..✅\n\n╚────⊢✭⊣────╝`);
+        return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n•You have earned interest of ${interestEarned.toFixed(2)} $ . It has been successfully added to your account balance..✅\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
         case "lottery":
         const lotteryTicketPrice = 100;
         const lotteryTicketCount = parseInt(args[1]);
 
         if (isNaN(lotteryTicketCount) || lotteryTicketCount <= 0) {
-          return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•Please enter a valid number of lottery tickets to buy.🎫\n\n╚────⊢✭⊣────╝");
+          return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n•Please enter a valid number of lottery tickets to buy.🎫\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
         }
 
         const totalCost = lotteryTicketPrice * lotteryTicketCount;
 
         if (userMoney < totalCost) {
-          return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•You don't have enough money to buy that many lottery tickets.🙅‍♂️\n\n╚────⊢✭⊣────╝");
+          return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n•You don't have enough money to buy that many lottery tickets.🙅‍♂️\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
         }
         const lotteryResults = [];
         for (let i = 0; i < lotteryTicketCount; i++) {
@@ -207,20 +207,20 @@ module.exports = {
           money: userMoney - totalCost + totalWinnings
         });
 
-        return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n•You've bought ${lotteryTicketCount} lottery tickets and won ${totalWinnings}$ in total!🎉\n\n╚────⊢✭⊣────╝`);
+        return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n•You've bought ${lotteryTicketCount} lottery tickets and won ${totalWinnings}$ in total!🎉\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
       case "transfer":
         const senderBalance = bankData[user].bank || 0;
 
         if (isNaN(amount) || amount <= 0) {
-          return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• ❗|Please enter the amount you want to transfer...♻️\n\n╚────⊢✭⊣────╝");
+          return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• ❗|Please enter the amount you want to transfer...♻️\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
         }
 
         if (senderBalance < amount) {
-          return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦]\n\n• The amount is not available in your bank account•\n\n╚────⊢✭⊣────╝");
+          return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦]\n\n• The amount is not available in your bank account•\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
         }
 
         if (isNaN(recipientUID)) {
-          return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• Please write:\n• ${p}Bank Transfer followed by the\n amount and the recipient's ID ${uid}\n• Example:\n• ${p}Bank Transfer 5000 289272210979\n\n╚────⊢✭⊣────╝`);
+          return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• Please write:\n• ${p}Bank Transfer followed by the\n amount and the recipient's ID ${uid}\n• Example:\n• ${p}Bank Transfer 5000 289272210979\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
         }
 
         if (!bankData[recipientUID]) {
@@ -235,9 +235,9 @@ module.exports = {
 
         const Ruser = await api.getUserInfo(recipientUID);
       const Rname = Ruser[recipientUID].name;
-        const recipientMessage = `╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• You have received ${amount}$\nFrom:\n• Name: ${username}\n• BankID: ${user}.\n• Your current Bank balance:\n${bankData[recipientUID].bank}$\n\n• ★𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌★ Database✅\n\n╚────⊢✭⊣────╝`;
+        const recipientMessage = `╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• You have received ${amount}$\nFrom:\n• Name: ${username}\n• BankID: ${user}.\n• Your current Bank balance:\n${bankData[recipientUID].bank}$\n\n• 𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞 Database✅\n\n╚࿇━━━━✥◈✥━━━━࿇╝`;
   await api.sendMessage(recipientMessage, recipientUID);
-        return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• ✅|Successfully deducted ${amount}$ from your account and transferred to Recipient Account\n\n-Recipient Info-\n• Name: ${Rname}\n• BankID: ${recipientUID}\n\n• ★𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌★ Database|✅\n\n╚────⊢✭⊣────╝`);
+        return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• ✅|Successfully deducted ${amount}$ from your account and transferred to Recipient Account\n\n-Recipient Info-\n• Name: ${Rname}\n• BankID: ${recipientUID}\n\n• 𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞 Database|✅\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
 
 
       case "richest":
@@ -252,39 +252,39 @@ module.exports = {
           return `[${index + 1}. ${userName}]`;
         }))).join('\n');
 
-        return message.reply("╔────⊢✭⊣────╗\n\nRichest people in the world\n\n•𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• \nsystem👑🤴:\n──────────────\n\n╚────⊢✭⊣────╝" + output);
+        return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n💰 Richest people in the 𝘄𝗼𝗿𝗹𝗱 \n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\nsystem👑🤴:\n──────────────\n\n╚࿇━━━━✥◈✥━━━━࿇╝" + output);
 
         case "setpassword":
   const newPassword = args[1];
   if (!newPassword) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• ❌|Please provide a new password to set.|🔑\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• ❌|Please provide a new password to set.|🔑\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
   bankData[user].password = newPassword;
   fs.writeFileSync("./bank.json", JSON.stringify(bankData));
-  return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• ✅|Your password has been set successfully.|🔑\n\n╚────⊢✭⊣────╝");
+  return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• ✅|Your password has been set successfully.|🔑\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
 
 case "changepassword":
   const currentPassword = args[1];
   const newPwd = args[2]; // Rename the variable to 'newPwd'
 
   if (!currentPassword || !newPwd) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• ❌|Please provide your current password\n and a new password to change.|🔑\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• ❌|Please provide your current password\n and a new password to change.|🔑\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   if (bankData[user].password !== currentPassword) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• ❌|Incorrect current password.\nPlease try again.|🔑\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• ❌|Incorrect current password.\nPlease try again.|🔑\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
   bankData[user].password = newPwd; // Use the renamed variable 'newPwd'
   fs.writeFileSync("./bank.json", JSON.stringify(bankData));
-  return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• ✅|Your password has been changed successfully.|🔑\n\n╚────⊢✭⊣────╝");
+  return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• ✅|Your password has been changed successfully.|🔑\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
 
 case "removepassword":
   if (!bankData[user].password) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦]\n\n• ❗|You do not have a password set for your account.|🔒\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦]\n\n• ❗|You do not have a password set for your account.|🔒\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
   bankData[user].password = null;
   fs.writeFileSync("./bank.json", JSON.stringify(bankData));
-  return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• ✅|Your password has been \n removed successfully.|🔒\n\n╚────⊢✭⊣────╝");
+  return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• ✅|Your password has been \n removed successfully.|🔒\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
 
 
     case "loan":
@@ -293,15 +293,15 @@ case "removepassword":
     const loanPayed = bankData[user].loanPayed !== undefined ? bankData[user].loanPayed : true;
 
     if (!amount) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• ❌|Please enter a valid loan amount..❗\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• ❌|Please enter a valid loan amount..❗\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   if (amount > maxLoanAmount) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• ❌|The maximum loan amount is 4000 ‼️\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• ❌|The maximum loan amount is 4000 ‼️\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   if (!loanPayed && userLoan > 0) {
-    return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• ❌|You cannot take a new loan \nuntil you pay off your current loan..|🌚\nYour current loan to pay is: ${userLoan}$ \n\n╚────⊢✭⊣────╝`);
+    return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• ❌|You cannot take a new loan \nuntil you pay off your current loan..\nYour current loan to pay is: ${userLoan}$ \n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
   }
 
   bankData[user].loan = userLoan + amount;
@@ -310,26 +310,26 @@ case "removepassword":
 
   fs.writeFileSync("./bank.json", JSON.stringify(bankData));
 
-  return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• You have successfully taken a loan of ${amount}$\n  Please note that loans must be repaid within a certain period.|🥰\n\n╚────⊢✭⊣────╝`);
+  return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• You have successfully taken a loan of ${amount}$\n💁🏻‍♂️ Please note that loans must be repaid within a certain period.[🥰]\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
 
 
            case "payloan":
   const loanBalance = bankData[user].loan || 0;
 
   if (isNaN(amount) || amount <= 0) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• Please enter a valid amount to repay your loan..|❗\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• 💁🏻‍♂️enter a valid amount to repay your loan..[❗]\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   if (loanBalance <= 0) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• ✧You don't have any pending loan payments.|😄\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• ⛔You don't have any pending loan payments.(◍•ᴗ•◍)\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   if (amount > loanBalance) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• The amount required to pay off the loan is greater than your due amount. Please pay the exact amount.|😊\nYour total loan: ${loanBalance}$ \n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• The amount required to pay off the loan is greater than your due amount. Please pay the exact amount.(◍•ᴗ•◍)\nYour total loan: ${loanBalance}$ \n\n╚࿇━━━━✥◈✥━━━━࿇╝);
   }
 
   if (amount > userMoney) {
-    return message.reply("╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• You do not have ${amount}$ in your balance to repay the loan.|❌\n• Type ${p}bal\n• to view your current main balance..|😞\n\n╚────⊢✭⊣────╝");
+    return message.reply("╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n• You do not have ${amount}$ in your balance to repay the loan.[❌]\n• 𝗧𝘆𝗽𝗲 ${p}bal\n• to view your current main balance..ಥ_ಥ\n\n╚࿇━━━━✥◈✥━━━━࿇╝");
   }
 
   bankData[user].loan = loanBalance - amount;
@@ -345,11 +345,11 @@ case "removepassword":
 
   fs.writeFileSync("./bank.json", JSON.stringify(bankData));
 
-  return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• Successfully repaid ${amount}$ towards your loan.|✅\n\n• to check type:\n• ${p}bank balance\n\n• And your current loan to pay: ${bankData[user].loan}$ \n\n╚────⊢✭⊣────╝`);
+  return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\n Successfully repaid ${amount}$ towards your loan.[✅]\n\n• to check type:\n• ${p}bank balance\n\n• And your current loan to pay: ${bankData[user].loan}$ \n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
 
 
 default:
-        return message.reply(`╔────⊢✭⊣────╗\n\n🏦 •𝑾𝒂𝒍𝒆𝒙 𝑩𝒂𝒏𝒌• 🏦\n\n• Please use one of the following commands• \n• ${p}Bank Deposit\n• ${p}Bank Withdraw\n• ${p}Bank Balance\n• ${p}Bank Interest\n• ${p}Bank Transfer\n• ${p}Bank Richest\n• ${p}Bank Loan\n• ${p}Bank PayLoan\n• ${p}Bank invest\n• ${p}Bank Gamble\n• ${p}Bank Heist\n• ${p}Bank Lottery\n\n ===[🏦 Password 🏦]===\n• Please add password for secure your bank account\n\n• ${p}Bank setpassword\n• ${p}Bank changepassword\n• ${p}Bank removepassword\n\n╚────⊢✭⊣────╝`);
+        return message.reply(`╔࿇━━━━✥◈✥━━━━࿇╗\n\n🏦 •𝗭𝗘𝗣𝗛 𝗕𝗔𝗡𝗞• 🏦\n\nℹ️ Please use one of the following commands• \n• ${p}Bank Deposit\n• ${p}Bank Withdraw\n• ${p}Bank Balance\n• ${p}Bank Interest\n• ${p}Bank Transfer\n• ${p}Bank Richest\n• ${p}Bank Loan\n• ${p}Bank PayLoan\n• ${p}Bank invest\n• ${p}Bank Gamble\n• ${p}Bank Heist\n• ${p}Bank Lottery\n\n ===[🏦 𝗣𝗮𝘀𝘀𝘄𝗼𝗿𝗱 🏦]===\n• Please add password for secure your bank account\n\n• ${p}Bank setpassword\n• ${p}Bank changepassword\n• ${p}Bank removepassword\n\n╚࿇━━━━✥◈✥━━━━࿇╝`);
     }
   }
 };
